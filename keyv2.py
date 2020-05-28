@@ -1,0 +1,232 @@
+import gi
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+from array import *
+
+arr= []
+label = Gtk.Label()
+label.set_markup(' writing...')
+
+class MyWindow(Gtk.Window):
+    global label
+    def __init__(self):
+        Gtk.Window.__init__(self, title="")
+        grid = Gtk.Grid()
+        # self.add(grid)
+
+        # entry = Gtk.Entry()
+        # entry.set_editable(False)
+        # #entry.set_overwrite_mode(True)
+        # #entry.get_text(arr)
+
+
+        button1 = Gtk.Button(label="1")
+        button1.connect("clicked", self.on_button_clicked,"1")
+        button2 = Gtk.Button(label="2")
+        button2.connect("clicked", self.on_button_clicked,"2")
+        button3 = Gtk.Button(label="3")
+        button3.connect("clicked", self.on_button_clicked,"3")
+        button4 = Gtk.Button(label="4")
+        button4.connect("clicked", self.on_button_clicked,"4")
+        button5 = Gtk.Button(label="5")
+        button4.connect("clicked", self.on_button_clicked,"5")
+        button6 = Gtk.Button(label="6")
+        button6.connect("clicked", self.on_button_clicked,"6")
+        button7 = Gtk.Button(label="7")
+        button7.connect("clicked", self.on_button_clicked,"7")
+        button8 = Gtk.Button(label="8")
+        button8.connect("clicked", self.on_button_clicked,"8")
+        button9 = Gtk.Button(label="9")
+        button9.connect("clicked", self.on_button_clicked,"9")
+        button0 = Gtk.Button(label="0")
+        button0.connect("clicked", self.on_button_clicked,"0")
+
+        #--------------------------------------------------
+        buttonq = Gtk.Button(label="q")
+        buttonq.connect("clicked", self.on_button_clicked, "q")
+        buttonw = Gtk.Button(label="w")
+        buttonw.connect("clicked", self.on_button_clicked, "w")
+        buttone = Gtk.Button(label="e")
+        buttone.connect("clicked", self.on_button_clicked, "e")
+        buttonr = Gtk.Button(label="r")
+        buttonr.connect("clicked", self.on_button_clicked, "r")
+        buttont = Gtk.Button(label="t")
+        buttont.connect("clicked", self.on_button_clicked, "t")
+        buttony = Gtk.Button(label="y")
+        buttony.connect("clicked", self.on_button_clicked, "y")
+        buttonu = Gtk.Button(label="u")
+        buttonu.connect("clicked", self.on_button_clicked, "u")
+        buttoni = Gtk.Button(label="i")
+        buttoni.connect("clicked", self.on_button_clicked, "i")
+        buttono = Gtk.Button(label="o")
+        buttono.connect("clicked", self.on_button_clicked, "o")
+        buttonp= Gtk.Button(label="p")
+        buttonp.connect("clicked", self.on_button_clicked, "p")
+        buttonunderscore = Gtk.Button(label="_")
+        buttonunderscore.connect("clicked", self.on_button_clicked, "-")
+        buttonclear = Gtk.Button(label="clear")
+        buttonclear.connect("clicked", self.on_clear_clicked, "clear")
+        buttona = Gtk.Button(label="a")
+        buttona.connect("clicked", self.on_button_clicked, "a")
+        buttons = Gtk.Button(label="s")
+        buttons.connect("clicked", self.on_button_clicked, "s")
+        buttond = Gtk.Button(label="d")
+        buttond.connect("clicked", self.on_button_clicked, "d")
+        buttonf = Gtk.Button(label="f")
+        buttonf.connect("clicked", self.on_button_clicked, "f")
+        buttong = Gtk.Button(label="g")
+        buttong.connect("clicked", self.on_button_clicked, "g")
+        buttonh = Gtk.Button(label="h")
+        buttonh.connect("clicked", self.on_button_clicked, "h")
+        buttonj = Gtk.Button(label="j")
+        buttonj.connect("clicked", self.on_button_clicked, "j")
+        buttonk = Gtk.Button(label="k")
+        buttonk.connect("clicked", self.on_button_clicked, "k")
+        buttonl = Gtk.Button(label="l")
+        buttonl.connect("clicked", self.on_button_clicked, "l")
+        buttondot = Gtk.Button(label=".")
+        buttondot.connect("clicked", self.on_button_clicked, ".")
+        buttonscore = Gtk.Button(label="-")
+        buttonscore.connect("clicked", self.on_button_clicked, "_")
+
+#---------------------------------------------------
+        buttonz = Gtk.Button(label="z")
+        buttonz.connect("clicked", self.on_button_clicked, "z")
+        buttonx = Gtk.Button(label="x")
+        buttonx.connect("clicked", self.on_button_clicked, "x")
+        buttonc = Gtk.Button(label="c")
+        buttonc.connect("clicked", self.on_button_clicked, "c")
+        buttonv = Gtk.Button(label="v")
+        buttonv.connect("clicked", self.on_button_clicked, "v")
+        buttonb = Gtk.Button(label="b")
+        buttonb.connect("clicked", self.on_button_clicked, "b")
+        buttonn = Gtk.Button(label="n")
+        buttonn.connect("clicked", self.on_button_clicked,"n")
+        buttonm = Gtk.Button(label="m")
+        buttonm.connect("clicked", self.on_button_clicked, "m")
+        buttonat = Gtk.Button(label="@")
+        buttonat.connect("clicked", self.on_button_clicked, "@")
+        buttonhash = Gtk.Button(label="#")
+        buttonhash.connect("clicked", self.on_button_clicked, "#")
+        buttondollar = Gtk.Button(label="$")
+        buttondollar.connect("clicked", self.on_button_clicked, "$")
+        buttonprecent = Gtk.Button(label="%")
+        buttonprecent.connect("clicked", self.on_button_clicked, "%")
+
+#-------------------------------------------------
+        buttonstar = Gtk.Button(label="*")
+        buttonstar.connect("clicked", self.on_button_clicked, '*')
+        buttonand = Gtk.Button(label="&")
+        buttonand.connect("clicked", self.on_button_clicked, "&")
+        buttonpower = Gtk.Button(label="^")
+        buttonpower.connect("clicked", self.on_button_clicked, "^")
+        buttonslash = Gtk.Button(label="/")
+        buttonslash.connect("clicked", self.on_button_clicked, "/")
+        buttonbigger = Gtk.Button(label="<")
+        buttonbigger.connect("clicked", self.on_button_clicked, "<")
+        buttonsmaller = Gtk.Button(label=">")
+        buttonsmaller.connect("clicked", self.on_button_clicked, ">")
+        buttonspace = Gtk.Button(label="space")
+        buttonspace.connect("clicked", self.on_button_clicked,  " ")
+        buttonenter = Gtk.Button(label="enter")
+        buttonenter.connect("clicked", self.on_button_clicked, "done")
+        buttonequal = Gtk.Button(label="=")
+        buttonequal.connect("clicked", self.on_button_clicked, "=")
+
+#layout-------------------------------------------------------------------------------------------
+        #grid.add(label)
+        grid.attach(button1, 0, 1, 1, 1)
+        grid.attach(button2, 1, 1, 1, 1)
+        grid.attach(button3, 2, 1, 1, 1)
+        grid.attach(button4, 3, 1, 1, 1)
+        grid.attach(button5, 4, 1, 1, 1)
+        grid.attach(button6, 5, 1, 1, 1)
+        grid.attach(button7, 6, 1, 1, 1)
+        grid.attach(button8, 7, 1, 1, 1)
+        grid.attach(button9, 8, 1, 1, 1)
+        grid.attach(button0, 9, 1, 1, 1)
+        grid.attach(buttonclear, 10, 1, 1, 1)
+
+# ---------------------------------------------------------------------------------------------------------------
+        grid.attach(buttonq, 0, 2, 1, 1)
+        grid.attach(buttonw, 1, 2, 1, 1)
+        grid.attach(buttone, 2, 2, 1, 1)
+        grid.attach(buttonr, 3, 2, 1, 1)
+        grid.attach(buttont, 4, 2, 1, 1)
+        grid.attach(buttony, 5, 2, 1, 1)
+        grid.attach(buttonu, 6, 2, 1, 1)
+        grid.attach(buttoni, 7, 2, 1, 1)
+        grid.attach(buttono, 8, 2, 1, 1)
+        grid.attach(buttonp, 9, 2, 1, 1)
+        grid.attach(buttonunderscore, 10, 2, 1, 1)
+
+
+
+#------------------------------------------------------------------------------------------------------------------
+        grid.attach(buttona, 0, 3, 1, 1)
+        grid.attach(buttons, 1, 3, 1, 1)
+        grid.attach(buttond, 2, 3, 1, 1)
+        grid.attach(buttonf, 3, 3, 1, 1)
+        grid.attach(buttong, 4, 3, 1, 1)
+        grid.attach(buttonh, 5, 3, 1, 1)
+        grid.attach(buttonj, 6, 3, 1, 1)
+        grid.attach(buttonk, 7, 3, 1, 1)
+        grid.attach(buttonl, 8, 3, 1, 1)
+        grid.attach(buttondot, 9, 3, 1, 1)
+        grid.attach(buttonscore, 10, 3, 1, 1)
+#----------------------------------------------------------------------------------------------------
+        grid.attach(buttonat, 0, 4, 1, 1)
+        grid.attach(buttonhash, 1, 4, 1, 1)
+        grid.attach(buttonz, 2, 4, 1, 1)
+        grid.attach(buttonx, 3, 4, 1, 1)
+        grid.attach(buttonc, 4, 4, 1, 1)
+        grid.attach(buttonv, 5, 4, 1, 1)
+        grid.attach(buttonb, 6, 4, 1, 1)
+        grid.attach(buttonn, 7, 4, 1, 1)
+        grid.attach(buttonm, 8, 4, 1, 1)
+        grid.attach(buttondollar, 9, 4, 1, 1)
+        grid.attach(buttonprecent,10, 4, 1, 1)
+#---------------------------------------------------------------------------------------------------
+        grid.attach(buttonpower, 0, 5, 1, 1)
+        grid.attach(buttonand, 1, 5, 1, 1)
+        grid.attach(buttonstar, 2, 5, 1, 1)
+        grid.attach(buttonspace, 3, 5, 3, 1)
+        grid.attach(buttonenter, 6, 5, 2, 1)
+        grid.attach(buttonbigger, 8, 5, 1, 1)
+        grid.attach(buttonsmaller, 9, 5, 1, 1)
+        grid.attach(buttonslash, 10, 5, 1, 1)
+#------------------------------------------------------------------------------------------
+        box_r = Gtk.Box(orientation='vertical')
+        box_r.pack_start(label, True, True, 0)
+        box_r.pack_start(grid, False, True, 0)
+        self.add(box_r)
+
+
+
+#-----------------------------------------------------------------------------------------
+    def on_button_clicked(self, widget,letter):
+        global label
+        if str(letter) != "done" :
+            arr.append(str(letter))
+            print("".join(arr))
+            label.set_markup("<span font_desc='Tahoma bold 10' color='red' >%s</span>" % "".join(arr))
+        else :
+            win.close()
+            x=("".join(arr))
+
+
+    def on_clear_clicked(self, widget,letter):
+        global label
+        index=x = len(arr)-1
+        arr.pop(index)
+        print("".join(arr))
+        label.set_markup("<span font_desc='Tahoma bold 10' color='red' >%s</span>" % "".join(arr))
+
+
+def get_text():
+   return "".join(arr)
+win = MyWindow()
+#win.fullscreen()
+win.connect("destroy", Gtk.main_quit)
+win.show_all()
+Gtk.main()
